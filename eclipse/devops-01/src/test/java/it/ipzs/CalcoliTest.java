@@ -14,7 +14,7 @@ public class CalcoliTest {
 		int b = 15;
 		int expected = 20;
 		
-		var actual = c.somma(a, b);
+		int actual = c.somma(a, b);
 		
 		assertEquals(expected, actual);
 	}
