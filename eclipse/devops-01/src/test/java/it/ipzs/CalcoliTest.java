@@ -34,7 +34,15 @@ public class CalcoliTest {
 	
 	@Test
 	public void testQuoziente() {
-		fail("da implementare!!!");
+Calcoli c = new Calcoli();
+		
+		int a = 15;
+		int b = 6;
+		int expected = 2;
+		
+		int actual = c.quoziente(a, b);
+		
+		assertEquals(expected, actual);
 	}
 
 }

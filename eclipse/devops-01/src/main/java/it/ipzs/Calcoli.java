@@ -11,4 +11,8 @@ public class Calcoli {
 		return a * b;
 	}
 
+	public int quoziente(int a, int b) {
+		return a / b;
+	}
+	
 }
