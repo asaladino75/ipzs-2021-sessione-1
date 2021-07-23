@@ -21,7 +21,15 @@ public class CalcoliTest {
 	
 	@Test
 	public void testProdotto() {
-		fail("da implementare!!!");
+		Calcoli c = new Calcoli();
+		
+		int a = 5;
+		int b = 15;
+		int expected = 75;
+		
+		int actual = c.prodotto(a, b);
+		
+		assertEquals(expected, actual);
 	}
 	
 	@Test

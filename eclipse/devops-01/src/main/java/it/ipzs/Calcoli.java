@@ -6,5 +6,9 @@ public class Calcoli {
 		// faccio la somma
 		return a + b;
 	}
+	
+	public int prodotto(int a, int b) {
+		return a * b;
+	}
 
 }
