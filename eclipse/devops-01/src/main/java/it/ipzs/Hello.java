@@ -1,3 +1,4 @@
+package it.ipzs;
 
 public class Hello {
 
