@@ -25,7 +25,7 @@ pipeline {
                     steps {
                         echo 'Compilazione maven'
                         dir('eclipse/devops-01') {
-                            withMaven(jdk: 'JDK 11', maven: 'Maven 3.8.1') {
+                            withMaven(jdk: 'shared_jdk', maven: 'shared_maven') {
                                 bat 'mvn compile'
                             }
                         }                
@@ -53,7 +53,7 @@ pipeline {
                 stage('Testing & Packaging backend') {
                     steps {
                         dir('eclipse/devops-01') {
-                            withMaven(jdk: 'JDK 11', maven: 'Maven 3.8.1') {
+                            withMaven(jdk: 'shared_jdk', maven: 'shared_maven') {
                                 bat 'mvn package'
                             }
                         }                
