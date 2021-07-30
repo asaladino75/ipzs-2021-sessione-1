@@ -75,8 +75,10 @@ pipeline {
     post {
         success {
             bat "copy $webappZipFile c:\\Publish\\"
-            bat "git tag rev-${env.BUILD_NUMBER}"
-            bat "git push --tags"
+            withCredentials([gitUsernamePassword(credentialsId: 'andrea-github', gitToolName: 'Default')]) {
+                bat "git tag rev-${env.BUILD_NUMBER}"
+                bat "git push --tags"
+            }
         }
         failure {
             /*
