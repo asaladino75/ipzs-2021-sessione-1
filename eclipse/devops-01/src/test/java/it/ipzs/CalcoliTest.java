@@ -12,7 +12,7 @@ public class CalcoliTest {
 
 		int a = 5;
 		int b = 15;
-		int expected = 21;
+		int expected = 20;
 
 		int actual = c.somma(a, b);
 
