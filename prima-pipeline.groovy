@@ -84,7 +84,7 @@ pipeline {
                 to: 'andrea@colleoni.info'
                 )
             */
-            echo 'Failure!!'
+            echo 'Failure!!!!!!'
         }
         always {
             echo 'Finish'
