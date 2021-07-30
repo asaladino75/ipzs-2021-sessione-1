@@ -20,11 +20,21 @@ pipeline {
                 echo 'Compilazione maven'
                 dir('eclipse/devops-01') {
                     withMaven(jdk: 'JDK 11', maven: 'Maven 3.8.1') {
-                        bat 'mvn clean'
+                        bat 'mvn compile'
                     }
                 }                
                 
             }
         }
+        stage('Testing') {
+            steps {
+                dir('eclipse/devops-01') {
+                    withMaven(jdk: 'JDK 11', maven: 'Maven 3.8.1') {
+                        bat 'mvn test'
+                    }
+                }                
+                
+            }
+        }        
     }
 }
