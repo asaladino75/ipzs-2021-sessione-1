@@ -1,0 +1,28 @@
+version: "3.9"
+# elenco dei servizi
+services: 
+    web-01: 
+        # immagine con cui costruire il container
+        image: nginx
+        # array del mapping delle porte tcp
+        ports: 
+            - "8000:80"
+        # array del mapping dei volumi FS
+        volumes: 
+            - "C:\\Users\\andre\\Desktop\\Temp\\Corsi\\Avalon\\Zecca\\sessione-1\\docker\\nginx\\sito:/usr/share/nginx/html"
+    mydb: 
+        image: mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: passw0rd
+        volumes: 
+            - "C:\\Users\\andre\\Desktop\\Temp\\Corsi\\Avalon\\Zecca\\sessione-1\\docker\\nginx\\dati:/var/lib/mysql"
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        links:
+            # NOME_SERVIZIO_COMPOSE:NOME_LINK_CONTAINER
+            - mydb:db
+        environment:
+            PMA_HOST: mydb
+        ports:
+            - 8888:80
+
